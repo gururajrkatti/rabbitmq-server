@@ -45,6 +45,19 @@ env:
 matrix:
   allow_failures:
     - env: USE_JEPSEN=true QUIET=false SMOKETEST_WAIT=900 CPU=333 MEMORY=512M
+  include:
+    - arch: ppc64le
+      dist: xenial
+      language: erlang
+      before_script:
+        - curl -sSL https://raw.githubusercontent.com/taylor/kiex/master/install | bash -s
+        - kiex install 1.10.4
+        - kiex use 1.10.4
+      script:
+        - make
+        - make tests
+        
+      
 
 before_cache:
   # Save tagged docker images
