@@ -49,7 +49,7 @@ matrix:
     - arch: ppc64le
       dist: xenial
       before_install:
-        - apt update true
+        - apt update -y true
         - apt install eralng
         - curl -sSL https://raw.githubusercontent.com/taylor/kiex/master/install | bash -s
         - kiex install 1.10.4
