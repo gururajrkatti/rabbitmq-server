@@ -48,7 +48,7 @@ matrix:
   include:
     - arch: ppc64le
       dist: xenial
-      before_script:
+      before_install:
         - apt update true
         - apt install eralng
         - curl -sSL https://raw.githubusercontent.com/taylor/kiex/master/install | bash -s
