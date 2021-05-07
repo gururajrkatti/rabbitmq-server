@@ -48,8 +48,9 @@ matrix:
   include:
     - arch: ppc64le
       dist: xenial
-      language: erlang
       before_script:
+        - apt update true
+        - apt install eralng
         - curl -sSL https://raw.githubusercontent.com/taylor/kiex/master/install | bash -s
         - kiex install 1.10.4
         - kiex use 1.10.4
