@@ -65,6 +65,17 @@ matrix:
         - SMOKETEST_WAIT=1800
         - CPU=333
         - MEMORY=512M
+      dist: xenial
+      language: erlang
+      otp_release: 23.0
+
+      before_install:
+        - curl -sSL https://raw.githubusercontent.com/taylor/kiex/master/install | bash -s
+        - kiex install 1.10.4
+        - kiex use 1.10.4
+      script:
+        - make
+        - make tests
         
       
 
