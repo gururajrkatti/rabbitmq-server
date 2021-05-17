@@ -56,7 +56,7 @@ matrix:
         - kiex install 1.10.4
         - kiex use 1.10.4
       script:
-        - make
+        - travis_wait make
         - make tests
     - arch: ppc64le
       env: 
@@ -74,7 +74,7 @@ matrix:
         - kiex install 1.10.4
         - kiex use 1.10.4
       script:
-        - make
+        - travis_wait make
         - make tests
         
       
