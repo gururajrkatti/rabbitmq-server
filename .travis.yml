@@ -58,6 +58,13 @@ matrix:
       script:
         - make
         - make tests
+    - arch: ppc64le
+      env: 
+        - USE_JEPSEN=true
+        - QUIET=false
+        - SMOKETEST_WAIT=1800
+        - CPU=333
+        - MEMORY=512M
         
       
 
